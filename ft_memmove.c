@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 15:50:18 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/12 17:30:54 by ragreda-         ###   ########.fr       */
+/*   Created: 2022/09/12 17:36:13 by ragreda-          #+#    #+#             */
+/*   Updated: 2022/09/12 18:59:42 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include "libft.h"
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+void	*memmove(void *dst, const void *src, size_t len)
 {
-	(void)argc;
-	printf("%d\n", ft_isdigit(argv[1][0]));
+	if (dst > src)
+		memcpy(dst, src, len);
+	else
+		while(len-- > 0)
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
+	return (dst);
 }
