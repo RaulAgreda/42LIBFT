@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 17:36:13 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 12:08:20 by ragreda-         ###   ########.fr       */
+/*   Created: 2022/09/13 12:10:17 by ragreda-          #+#    #+#             */
+/*   Updated: 2022/09/13 12:13:07 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include "libft.h"
-
-void	*memmove(void *dst, const void *src, size_t len)
+char	*ft_strchr(const char *s, int c)
 {
-	if (dst > src)
-		memcpy(dst, src, len);
-	else
-		while (len-- > 0)
-			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
-	return (dst);
+	while (*s != 0)
+	{
+		if (*s == c)
+			return (s);
+		s++;
+	}
+	if (c == 0)
+		return (s);
+	return (0);
 }
