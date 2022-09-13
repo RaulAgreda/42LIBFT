@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 17:36:13 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 18:11:11 by ragreda-         ###   ########.fr       */
+/*   Created: 2022/09/13 17:45:11 by ragreda-          #+#    #+#             */
+/*   Updated: 2022/09/13 17:52:24 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (dst > src)
-		ft_memcpy(dst, src, len);
-	else
-		while (len-- > 0)
-			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
-	return (dst);
+	size_t			i;
+	unsigned char	*c1;
+	unsigned char	*c2;
+
+	c1 = (unsigned char *)s1;
+	c2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
+	{
+		if (c1[i] != c2[i])
+			return (c1[i] - c2[i]);
+		i++;
+	}
+	return (0);
 }

@@ -6,19 +6,22 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:10:17 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 12:13:07 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/13 18:15:56 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != 0)
+	char	*str;
+
+	str = (char *)s;
+	while (*str != 0)
 	{
-		if (*s == c)
-			return (s);
-		s++;
+		if (*str == (unsigned char)c)
+			return (str);
+		str++;
 	}
 	if (c == 0)
-		return (s);
+		return (str);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:39:30 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 12:08:58 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/13 18:08:57 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	bzero(void *s, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*cs;
 
 	cs = s;

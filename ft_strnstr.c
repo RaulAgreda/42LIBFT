@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 17:36:13 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 18:11:11 by ragreda-         ###   ########.fr       */
+/*   Created: 2022/09/13 17:54:48 by ragreda-          #+#    #+#             */
+/*   Updated: 2022/09/13 18:21:07 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (dst > src)
-		ft_memcpy(dst, src, len);
-	else
-		while (len-- > 0)
-			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
-	return (dst);
+	int		findlen;
+	char	*str;
+	char	*to_find;
+	size_t	i;
+
+	str = (char *)haystack;
+	to_find = (char *)needle;
+	if (*to_find == 0)
+		return (str);
+	findlen = ft_strlen(to_find);
+	i = 0;
+	while (str[i] != 0 && i < len)
+	{
+		if (str[i] == to_find[0])
+			if (ft_strncmp(str + i, to_find, findlen) == 0)
+				return (str + i);
+		i++;
+	}
+	return (0);
 }

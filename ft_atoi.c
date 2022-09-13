@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 17:36:13 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 18:11:11 by ragreda-         ###   ########.fr       */
+/*   Created: 2022/09/13 18:00:05 by ragreda-          #+#    #+#             */
+/*   Updated: 2022/09/13 18:04:37 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include "libft.h"
-
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_atoi(const char *str)
 {
-	if (dst > src)
-		ft_memcpy(dst, src, len);
-	else
-		while (len-- > 0)
-			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
-	return (dst);
+	int	neg;
+	int	n;
+
+	neg = *str == '-';
+	if (neg)
+		str++;
+	n = 0;
+	while (*str >= '0' && *str <= '9')
+	{
+		n = n * 10 + (*str - '0');
+	}
+	if (neg)
+		return (-n);
+	return (n);
 }
