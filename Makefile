@@ -4,6 +4,7 @@ CFLAGS		= -Wall -Wextra -Werror
 DELINP		= .stdin.txt
 NAME		= libft.a
 CC			= gcc
+AR			= ar r
 RM			= rm -rf
 .PHONY		= all clean fclean re
 
@@ -13,7 +14,7 @@ all:		${NAME}
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			${CC} ${CFLAGS} -o ${NAME} ${OBJS}
+			${AR} ${NAME} ${OBJS}
 
 clean:	
 			${RM} ${OBJS} ${DELINP}

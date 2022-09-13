@@ -6,14 +6,14 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 17:54:48 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 18:21:07 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/13 20:10:15 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-char	*strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	int		findlen;
 	char	*str;
@@ -26,7 +26,7 @@ char	*strnstr(const char *haystack, const char *needle, size_t len)
 		return (str);
 	findlen = ft_strlen(to_find);
 	i = 0;
-	while (str[i] != 0 && i < len)
+	while (str[i] != 0 && i + findlen < len)
 	{
 		if (str[i] == to_find[0])
 			if (ft_strncmp(str + i, to_find, findlen) == 0)

@@ -6,13 +6,13 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:39:30 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 18:08:57 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/13 19:09:01 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 	char	*cs;

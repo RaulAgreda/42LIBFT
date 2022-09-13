@@ -6,13 +6,13 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 17:45:11 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 17:52:24 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/13 19:07:04 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
 	unsigned char	*c1;

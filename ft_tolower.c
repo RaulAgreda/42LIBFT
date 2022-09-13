@@ -6,11 +6,11 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 11:57:37 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 12:09:37 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/13 19:05:58 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
 	unsigned char	cu;
 
