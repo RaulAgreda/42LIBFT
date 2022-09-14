@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 20:16:13 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/14 09:59:55 by ragreda-         ###   ########.fr       */
+/*   Created: 2022/09/14 10:09:27 by ragreda-          #+#    #+#             */
+/*   Updated: 2022/09/14 10:11:27 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdlib.h>
-#include <limits.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strdup(const char *src)
 {
-	size_t			mem;
-	size_t			i;
-	unsigned char	*ret;
+	int		i;
+	char	*sdup;
 
-	if (nmemb > ULONG_MAX / size)
+	i = 0;
+	if (src == 0)
 		return (0);
-	mem = nmemb * size;
-	ret = malloc(nmemb * size);
-	if (ret == 0)
+	while (src[i] != 0)
+			i++;
+	sdup = (char *)malloc(sizeof(char) * (i + 1));
+	if (sdup == 0)
 		return (0);
 	i = 0;
-	while (i < mem)
+	while (src[i] != 0)
 	{
-		ret[i] = 0;
-		i++;
+			sdup[i] = src[i];
+			i++;
 	}
-	return ((void *)ret);
+	sdup[i] = 0;
+	return (sdup);
 }
