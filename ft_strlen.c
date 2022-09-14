@@ -6,11 +6,13 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:18:28 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/12 16:21:53 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/14 10:35:30 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *s)
 {
 	int	length;
 
