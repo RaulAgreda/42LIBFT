@@ -6,7 +6,7 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 11:02:22 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/14 16:40:52 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/15 10:33:32 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (i < len && ft_strchr(set, s1[i]))
 		i++;
 	last = len - 1;
-	while (last >= 0 && ft_strchr(set, s1[last]))
+	while (ft_strchr(set, s1[last]))
 		if (last > 0)
 			last--;
 	else

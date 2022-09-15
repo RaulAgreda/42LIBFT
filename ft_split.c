@@ -6,9 +6,11 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 16:57:02 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/14 17:50:09 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/15 10:34:01 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int	n_words(char const *s, char c)
 {
@@ -30,7 +32,7 @@ int	n_words(char const *s, char c)
 	return (n);
 }
 
-int	count_word(char const *s, char c, int	*i)
+int	count_word(char const *s, char c, int *i)
 {
 	int	count;
 	int	j;
@@ -38,7 +40,7 @@ int	count_word(char const *s, char c, int	*i)
 	count = 0;
 	while (s[*i] == c)
 		(*i)++;
-	j = i;
+	j = *i;
 	while (s[j] != c && s[j] != 0)
 	{
 		count++;
@@ -50,25 +52,27 @@ int	count_word(char const *s, char c, int	*i)
 char	**ft_split(char const *s, char c)
 {
 	int		i;
+	int		k;
 	int		w;
+	int		w_count;
 	char	**ret;
 
-	w = n_words(s, c);
-	ret = malloc(sizeof(char *) * (w + 1));
-	ret[w] = 0:
+	ret = malloc(sizeof(char *) * (n_words(s, c) + 1));
+	ret[n_words(s, c)] = 0;
 	i = 0;
 	w = 0;
 	while (w < n_words(s, c))
 	{
-
+		w_count = count_word(s, c, &i);
+		ret[w] = malloc(sizeof(char) * (w_count + 1));
+		k = 0;
+		while (k < w_count)
+		{
+			ret[w][k] = s[i++];
+			k++;
+		}
+		ret[w][k] = 0;
 		w++;
 	}
-}
-int	main(int argc, char **argv)
-{
-	int	j;
-
-	j = 0;
-	for (int i = 0; i < n_words(argv[1], argv[2][0]); i++)
-		printf("%d\n", count_word(argv[1], argv[2][0], &j));
+	return (ret);
 }
