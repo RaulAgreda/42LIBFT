@@ -6,7 +6,7 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 11:02:22 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/15 10:33:32 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/15 16:43:13 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 			last--;
 	else
 		break ;
-	if (last > i)
+	if (last >= i)
 		return (ft_substr(s1, i, last - i + 1));
 	ret = malloc(sizeof(char));
 	*ret = 0;
 	return (ret);
 }
-/*
-int	main(int argc, char **argv)
-{
-	printf("%s\n", ft_strtrim(argv[1], argv[2]));
-}*/
