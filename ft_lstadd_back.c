@@ -6,7 +6,7 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:31:43 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/15 12:34:37 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/15 13:31:14 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	back = ft_lstlast(*lst);
 	if (back != 0)
 		back->next = new;
+	else
+		*lst = new;
 }
