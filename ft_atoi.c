@@ -6,11 +6,11 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 18:00:05 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 19:22:58 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/18 17:46:37 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-const char	*ignore_spaces(const char *s)
+static const char	*ignore_spaces(const char *s)
 {
 	while (*s == ' ' || *s == '\v' || *s == '\t'
 		|| *s == '\r' || *s == '\n' || *s == '\f')

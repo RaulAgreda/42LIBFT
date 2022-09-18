@@ -6,13 +6,13 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 16:57:02 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/18 17:32:40 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/18 17:48:13 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	n_words(char const *s, char c)
+static int	n_words(char const *s, char c)
 {
 	int	n;
 	int	word;
@@ -32,7 +32,7 @@ int	n_words(char const *s, char c)
 	return (n);
 }
 
-int	count_word(char const *s, char c, int *i)
+static int	count_word(char const *s, char c, int *i)
 {
 	int	count;
 	int	j;
@@ -49,7 +49,7 @@ int	count_word(char const *s, char c, int *i)
 	return (count);
 }
 
-void	*save_malloc(char ***ret, size_t size, size_t elems)
+static void	*save_malloc(char ***ret, size_t size, size_t elems)
 {
 	*ret = malloc(size * elems);
 	return (ret);

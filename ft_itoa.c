@@ -6,13 +6,13 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 10:42:16 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/15 11:11:48 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/18 17:47:28 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	n_digits(int n)
+static int	n_digits(int n)
 {
 	int	count;
 
