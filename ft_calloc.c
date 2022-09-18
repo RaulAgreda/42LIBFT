@@ -6,7 +6,7 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 20:16:13 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/14 09:59:55 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/18 21:25:47 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t			i;
 	unsigned char	*ret;
 
-	if (nmemb > ULONG_MAX / size)
+	if (!nmemb || (nmemb && nmemb > SIZE_MAX / size))
 		return (0);
 	mem = nmemb * size;
 	ret = malloc(nmemb * size);
