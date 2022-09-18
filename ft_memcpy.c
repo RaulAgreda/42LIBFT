@@ -6,7 +6,7 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 17:26:23 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 20:05:43 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/18 16:55:23 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*d;
 	unsigned char	*s;
 
+	if (!dst && !src)
+		return (0);
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
 	i = 0;
