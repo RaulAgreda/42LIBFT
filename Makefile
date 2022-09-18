@@ -9,12 +9,12 @@ AR			= ar r
 RM			= rm -rf
 .PHONY		= all clean fclean re
 
-all:		mandatory
+all:		${NAME}
 
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-mandatory:	${OBJS}
+${NAME}:	${OBJS}
 			${AR} ${NAME} ${OBJS}
 
 bonus: 		${OBJS} ${BOBJS}
