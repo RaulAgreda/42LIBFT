@@ -6,7 +6,7 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 11:47:14 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/13 17:52:38 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/18 17:10:12 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	unsigned int	d_length;
 	unsigned int	s_length;
 
+	if (dest == 0 && size == 0)
+		return (0);
 	d_length = ft_strlen(dest);
 	s_length = ft_strlen(src);
 	i = 0;

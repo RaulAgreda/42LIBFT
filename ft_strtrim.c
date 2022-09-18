@@ -6,7 +6,7 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 11:02:22 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/15 16:43:13 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/18 17:20:48 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	char	*ret;
 
+	if (s1 == 0)
+		return (0);
 	len = ft_strlen(s1);
 	i = 0;
 	while (i < len && ft_strchr(set, s1[i]))
