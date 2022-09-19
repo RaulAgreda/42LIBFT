@@ -4,6 +4,7 @@ BONUS		= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast
 BOBJS		= ${BONUS:.c=.o}
 CFLAGS		= -Wall -Wextra -Werror
 NAME		= libft.a
+RE_BONUS	= .bonus
 CC			= gcc
 AR			= ar r
 RM			= rm -rf
@@ -17,14 +18,17 @@ all:		${NAME}
 ${NAME}:	${OBJS}
 			${AR} ${NAME} ${OBJS}
 
-bonus: 		${OBJS} ${BOBJS}
+bonus: 		${RE_BONUS}
+
+${RE_BONUS}:${OBJS} ${BOBJS}
 			${AR} ${NAME} ${OBJS} ${BOBJS}
+			@touch ${RE_BONUS}
 
 clean:	
 			${RM} ${OBJS} ${BOBJS}
 
 fclean:		clean
-			${RM} ${NAME}
+			${RM} ${NAME} ${RE_BONUS}
 
 re:			fclean all
 
