@@ -6,7 +6,7 @@
 /*   By: ragreda- <ragreda-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 16:57:02 by ragreda-          #+#    #+#             */
-/*   Updated: 2022/09/18 17:48:13 by ragreda-         ###   ########.fr       */
+/*   Updated: 2022/09/19 21:15:27 by ragreda-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,20 @@ static void	*save_malloc(char ***ret, size_t size, size_t elems)
 	return (ret);
 }
 
+static void	*free_split(char **sp, int n_words)
+{
+	int	i;
+
+	i = 0;
+	while (i < n_words)
+	{
+		free(sp[i]);
+		i++;
+	}
+	free(sp);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -72,12 +86,11 @@ char	**ft_split(char const *s, char c)
 	{
 		w_count = count_word(s, c, &i);
 		ret[w] = malloc(sizeof(char) * (w_count + 1));
+		if (!ret[w])
+			return (free_split(ret, w + 1));
 		k = 0;
 		while (k < w_count)
-		{
-			ret[w][k] = s[i++];
-			k++;
-		}
+			ret[w][k++] = s[i++];
 		ret[w][k] = 0;
 		w++;
 	}
