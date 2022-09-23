@@ -7,18 +7,18 @@ NAME		= libft.a
 CC			= gcc
 AR			= ar r
 RM			= rm -rf
-.PHONY		= all clean fclean re
+.PHONY		= all clean fclean re bonus
+
+all:		${NAME}
 
 ${NAME}:	${OBJS}
 			${AR} ${NAME} ${OBJS}
-
-all:		${NAME}
 
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 bonus: 		${BOBJS} ${OBJS}
-			@make ${NAME} OBJS="${OBJS} ${BOBJS}" --no-print-directory
+			@make OBJS="${OBJS} ${BOBJS}" all
 
 clean:	
 			${RM} ${OBJS} ${BOBJS}
