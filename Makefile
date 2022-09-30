@@ -7,7 +7,7 @@ NAME		= libft.a
 CC			= gcc
 AR			= ar r
 RM			= rm -rf
-.PHONY		= all clean fclean re bonus
+BONUS_RE 	= .
 
 all:		${NAME}
 
@@ -17,8 +17,10 @@ ${NAME}:	${OBJS}
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-bonus: 		${BOBJS} ${OBJS}
-			@make OBJS="${OBJS} ${BOBJS}" all
+${BONUS_RE}: ${BOBJS} ${OBJS}
+			${AR} ${NAME} ${OBJS} ${BOBJS}
+
+bonus:  ${BONUS_RE}
 
 clean:	
 			${RM} ${OBJS} ${BOBJS}
@@ -28,3 +30,4 @@ fclean:		clean
 
 re:			fclean all
 
+.PHONY: all clean fclean re bonus all
